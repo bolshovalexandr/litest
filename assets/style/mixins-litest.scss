@@ -1,0 +1,86 @@
+// оттенки серого, белого и черного
+$DarkGray: #65696d;
+$Gray: #888;
+$LightGray: #ebeef5;
+$White: #fff;
+$DarkWhite: #f5f6fa;
+$PureBlack: #000;
+$Black: #191e27;
+$SnowBlue: #dbffff;
+$RoyalBlue: #4169e1;
+
+$Green: lightgreen;
+$Blue: blue;
+$LightBlue: lightblue;
+
+// Media-выражения
+$DesktopWidth: 780px;
+
+@mixin desktop {
+	@media screen and (min-width: $DesktopWidth) {
+		@content;
+	}
+}
+
+@mixin clear-link() {
+	&,
+	&:hover,
+	&:visited,
+	&:active {
+		text-decoration: none;
+		outline: none;
+	}
+}
+
+// заготовка миксина для шрифтов (как минимум: заголовки, основной текст, списки)
+// HEADERS
+
+@mixin h4() {
+	font-size: 3.75rem;
+	font-weight: 300;
+	line-height: 1;
+}
+
+// @mixin h18() {
+// 	font-size: 18px;
+// 	font-weight: 800;
+// }
+
+@mixin h16() {
+	font-size: 1rem;
+	font-weight: 800;
+}
+
+// TEXT
+@mixin t18() {
+	font-size: 18px;
+	font-weight: 600;
+}
+
+@mixin t12() {
+	font-size: 16px;
+	font-weight: 600;
+}
+
+// CODE
+@mixin c14() {
+	font-size: 16px;
+	font-weight: 500;
+}
+
+// QUOTE
+@mixin font-quote() {
+	font-size: 1rem;
+	font-style: italic;
+	font-weight: 300;
+}
+
+@mixin font-nav() {
+	font-size: 0.8rem;
+	font-weight: 400;
+}
+
+@mixin font-link() {
+	font-size: 1.2rem;
+	font-weight: 300;
+}
