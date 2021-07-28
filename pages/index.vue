@@ -17,10 +17,12 @@
 					include ../assets/svg/arrow-right.svg
 			.block__quote Если всё знать, так это любой дурак сделает
 			ul.block__link-list
-				//- li
-				//- 	NuxtLink.block__link(to="/theory/js") JS: декораторы
 				li
-					NuxtLink.block__link(to="/theory/ts") TypeScript: lost not forgotten
+					NuxtLink.block__link(to="/theory/ts-basics") TypeScript: lost not forgotten. Basics.
+				li
+					NuxtLink.block__link(to="/theory/ts-advanced") TypeScript: advanced.
+				li
+					NuxtLink.block__link(to="/theory/tsx") TSX: like a React in disguise
 
 		.block
 			.block__head
@@ -71,7 +73,7 @@ export default class Index extends Vue {
 </script>
 
 <style lang="scss" scoped>
-@import "../assets/style/mixins-litest.scss";
+@import "../assets/style/globals-litest.scss";
 
 .intro {
 	position: relative;
@@ -124,13 +126,13 @@ export default class Index extends Vue {
 	&__snowflakes {
 		margin: 0 0.25rem;
 		cursor: pointer;
-		border-bottom: 1px dashed #4169e1;
+		border-bottom: 1px dashed $RoyalBlue;
 	}
 }
 
 .block {
 	padding-top: 2rem;
-	margin-bottom: 6rem;
+	margin-bottom: 5rem;
 	border-top: 2px solid $Black;
 
 	&__hidden-icon {
@@ -177,7 +179,7 @@ export default class Index extends Vue {
 	}
 
 	&__header {
-		@include h4;
+		@include header-main();
 
 		margin-right: 1rem;
 		color: $Black;
@@ -185,7 +187,7 @@ export default class Index extends Vue {
 	}
 
 	&__quote {
-		@include font-quote();
+		@include font-epigraph();
 
 		margin-bottom: 2rem;
 	}
@@ -199,6 +201,10 @@ export default class Index extends Vue {
 
 	&__link-list {
 		list-style: none;
+
+		li {
+			margin-bottom: 0.25rem;
+		}
 	}
 
 	&__link {

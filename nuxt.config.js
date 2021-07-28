@@ -31,10 +31,7 @@ export default {
 	css: [
 		'~assets/style/normalize-classic.css',
 		'~assets/style/normalize-modern.css',
-		'~assets/style/default.scss',
-		'~assets/style/mixins-litest.scss',
-		'~assets/style/mixins-space.scss',
-		'~assets/style/mixins-2-the-moon.scss'
+		'~assets/style/default.scss'
 	],
 
 	// Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
@@ -59,7 +56,7 @@ export default {
 	},
 	styleResources: {
 		scss: [
-			'~assets/style/mixins-litest.scss',
+			'~assets/style/globals-litest.scss',
 			'~assets/style/mixins-space.scss',
 			'~assets/style/mixins-2-the-moon.scss'
 		]
@@ -67,7 +64,10 @@ export default {
 	// Modules: https://go.nuxtjs.dev/config-modules
 	modules: [
 		// https://go.nuxtjs.dev/axios
-		'@nuxtjs/axios'
+		'@nuxtjs/axios',
+		['nuxt-highlightjs', {
+			style: 'Github'
+		}]
 	],
 
 	// Axios module configuration: https://go.nuxtjs.dev/config-axios

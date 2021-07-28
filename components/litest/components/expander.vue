@@ -15,42 +15,30 @@ import Component from 'vue-class-component';
 
 @Component({})
 export default class Expander extends Vue {
-	onAfterEnter(element) {
-		element.style.height = 'auto';
-	}
-
 	onEnter(element) {
+		// Получаем полную высоту по контенту (ширину берем, чтобы блок при не растянулся при абс. позиционировании)
 		const { width } = getComputedStyle(element);
 		element.style.width = width;
 		element.style.position = 'absolute';
 		element.style.visibility = 'hidden';
 		element.style.height = 'auto';
 		const { height } = getComputedStyle(element);
-		element.style.width = null;
+		// сбрасываем инлайновые стили
 		element.style.position = null;
 		element.style.visibility = null;
+		element.style.width = null;
+		// высоту - в ноль
 		element.style.height = 0;
-		/* eslint-enable */
-		// Force repaint to make sure the
-		// animation is triggered correctly.
-		// eslint-disable-next-line no-unused-expressions
-		getComputedStyle(element).height;
-		requestAnimationFrame(() => {
-			// eslint-disable-next-line no-param-reassign
+		// запускаем анимацию развертывания
+		window.requestAnimationFrame(() => {
 			element.style.height = height;
 		});
 	}
 
 	onLeave(element) {
 		const { height } = getComputedStyle(element);
-		// eslint-disable-next-line no-param-reassign
 		element.style.height = height;
-		// Force repaint to make sure the
-		// animation is triggered correctly.
-		// eslint-disable-next-line no-unused-expressions
-		getComputedStyle(element).height;
-		requestAnimationFrame(() => {
-			// eslint-disable-next-line no-param-reassign
+		window.requestAnimationFrame(() => {
 			element.style.height = 0;
 		});
 	}
@@ -61,7 +49,7 @@ export default class Expander extends Vue {
 .expand-enter-active,
 .expand-leave-active {
 	overflow: hidden;
-	transition: height 1s ease-in-out;
+	transition: height 0.3s ease-in-out;
 }
 
 .expand-enter,

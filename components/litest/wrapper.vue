@@ -70,8 +70,6 @@ export default class Wrapper extends Vue {
 		}
 		return this.$route.path.split('/').map((path, index, array) => {
 			const link = path ? array[index - 1] + '/' + path : '/';
-			console.log(path);
-			console.log(link);
 			const title = path ? this.breadcrumbsDictionary[path] || path : 'Главная';
 			return {
 				link,
@@ -85,92 +83,88 @@ export default class Wrapper extends Vue {
 
 <style lang="scss" scoped>
 
-	.breadcrumbs {
-		margin-bottom: 2rem;
-		font-size: 0.7rem;
+.global-wrapper {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 100%;
+	min-height: 100vh;
+	padding-top: 1rem;
+	background-color: $White;
+
+	&__content {
+		width: 960px;
+	}
+}
+
+.breadcrumbs {
+	margin-bottom: 3rem;
+	font-size: 0.7rem;
+	text-transform: uppercase;
+
+	&__item {
+		font-weight: 600;
+		color: $Black;
+		transition: color 0.3s;
+
+		&:hover {
+			color: $DarkGray;
+		}
+	}
+
+	&__divider {
+		margin: 0 8px;
+
+		svg {
+			width: 34px;
+		}
+	}
+
+	&__last {
+		font-weight: 400;
+	}
+}
+
+a.nav__link.nuxt-link-active {
+	border-bottom: 1px solid $Black;
+}
+
+.mask svg {
+	width: 80px;
+	stroke: $Black;
+}
+
+.nav {
+	display: flex;
+	align-items: center;
+	margin-bottom: 3rem;
+
+	&__link {
+		@include clear-link();
+		@include font-nav();
+
+		margin-left: 2rem;
+		// font-size: 14px;
+		// font-weight: 400;
+		color: $Black;
 		text-transform: uppercase;
+		background-color: linear-gradient(currentColor 0 0);
+		background-position: 0 100%;
+		background-size: 3px 3px;
+		transition:
+			opacity 0.3s ease-in,
+			color 0.3s ease-in;
 
-		&__item {
-			font-weight: 600;
-			color: $Black;
-			transition: color 0.3s;
-
-			&:hover {
-				color: $DarkGray;
-			}
+		&:hover {
+			opacity: 0.8;
 		}
 
-		&__divider {
-			margin: 0 8px;
-
-			svg {
-				width: 34px;
-			}
-		}
-
-		&__last {
-			font-weight: 400;
+		&--logo {
+			margin-right: auto;
+			margin-left: 0;
+			border-bottom: none !important;
 		}
 	}
-
-	a.nav__link.nuxt-link-active {
-		border-bottom: 1px solid $Black;
-	}
-
-	.mask svg {
-		width: 80px;
-		stroke: $Black;
-	}
-
-	.global-wrapper {
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		width: 100%;
-		min-height: 100vh;
-		padding-top: 1rem;
-		background-color: $White;
-
-		&__content {
-			width: 960px;
-		}
-	}
-
-	.nav {
-		display: flex;
-		align-items: center;
-		margin-bottom: 3rem;
-
-		&__link {
-			@include clear-link();
-			@include font-nav();
-
-			margin-left: 2rem;
-			// font-size: 14px;
-			// font-weight: 400;
-			color: $Black;
-			text-transform: uppercase;
-			background-color: linear-gradient(currentColor 0 0);
-			background-position: 0 100%;
-			background-size: 3px 3px;
-			transition:
-				opacity 0.3s ease-in,
-				color 0.3s ease-in;
-
-			&:active {
-				color: $Green;
-			}
-
-			&:hover {
-				opacity: 0.8;
-			}
-
-			&--logo {
-				margin-right: auto;
-				margin-left: 0;
-				border-bottom: none !important;
-			}
-		}
-	}
+}
 
 </style>

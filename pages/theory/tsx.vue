@@ -1,6 +1,11 @@
 <template lang="pug">
 	LitestWarpper
-
+		.global-article
+			h1 TSX
+			h2 Одной строкой
+			ul
+				li JSX вообще - это XML-подобная надстройка над JS, комбинирующая JS-код и разметку
+			h2 Использование TSX в NuxtJS
 </template>
 
 <script lang="ts">
@@ -17,12 +22,11 @@ import LitestWarpper from '~/components/litest/wrapper.vue';
 		LitestWarpper
 	}
 })
-export default class TSTheory extends Vue {
+export default class TSX extends Vue {
 
 }
 </script>
 
 <style lang="scss" scoped>
-@import "../../assets/style/mixins-litest.scss";
-
+@import "../../assets/style/globals-litest.scss";
 </style>

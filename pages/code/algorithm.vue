@@ -23,6 +23,6 @@ export default class CodeAlgorithm extends Vue {
 </script>
 
 <style lang="scss" scoped>
-@import "../../assets/style/mixins-litest.scss";
+@import "../../assets/style/globals-litest.scss";
 
 </style>
