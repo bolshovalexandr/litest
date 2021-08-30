@@ -2,7 +2,6 @@
 	transition(
 		name="expand"
 		@enter="onEnter"
-		@after-enter="onAfterEnter"
 		@leave="onLeave"
 	)
 		slot

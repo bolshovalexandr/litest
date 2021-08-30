@@ -4,22 +4,18 @@
 </template>
 
 <script lang="ts">
-// TS
 import Vue from 'vue';
 import Component from 'vue-class-component';
-// Глобальные компоненты
 import LitestWarpper from '~/components/litest/wrapper.vue';
-// Крафтовые компоненты
-// Вспомогательные библиотеки
+import Expander from '~/components/litest/components/expander.vue';
 
 @Component({
 	components: {
-		LitestWarpper
+		LitestWarpper,
+		Expander
 	}
 })
-export default class ArtIndex extends Vue {
-
-}
+export default class ArtIndex extends Vue {}
 </script>
 
 <style lang="scss" scoped>

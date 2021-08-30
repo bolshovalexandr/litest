@@ -40,32 +40,103 @@
 					let arrOfMisc2: Array&lt;number|string&gt; = [1, 2, 3, 'a', 'b'];
 					let arrOfNumbers3: (number|string)[] = [1, 2, 3, 'a', 'b'];
 
+			h4 Перечисления (Enums)
+			code(v-highlight class="typescript")
+				pre.
+					enum Numbers {
+							One,
+							Two,
+							Four = 4
+					}
+					console.log(Numbers.One);  // 0
+					console.log(Numbers[0]);   // One
+					console.log(Numbers.Four); // 4
+					console.log(Numbers[4]);   // Four
+
+			h4 Обобщение (Generic)
+			ul
+				li типы могу быть параметризированы - в качестве параметра можно передать тип, а не значение
+				li обобщенными могут быть классы, функции и интерфейсы
+				li обобщение — это часть кода, способная обрабатывать значения нескольких типов, которые указываются при использовании этого кода
+				code(v-highlight class="typescript")
+					pre.
+						// указываем тип элемента массива
+						const someValues: number[];
+						// используем обобщенный тип Array, в который передаем параметр типа
+						const someValues: Array&lt;number&gt;;
+				li также корректно будет использовать подтип, если в обобщение был передан супертип (т.е. использовать расширенную версию), к тому же из-за структурной типизации, можно передать любой тип, схожий по составу
+				code(v-highlight class="typescript")
+					pre.
+						class Person { name: string; }
+						class Employee extends Person { department: number; }
+						const workers: Array&lt;Person&gt; = [];
+						workers[0] = new Person();
+						workers[1] = new Employee();
+				li пример использования обобщений в функциях и промисах
+				code(v-highlight class="typescript")
+					pre.
+						function reverse&lt;T&gt;(arr: Array&lt;T&gt;) :Array&lt;T&gt; {									// функциональное объявление
+							return arr.reverse();
+						}
+						const reverse = function&lt;T&gt;(arr:Array&lt;T&gt;):Array&lt;T&gt; {						// функциональное выражение
+							return arr.reverse();
+						}
+						const reverse = &lt;T&gt;(arr: Array&lt;T&gt;): Array&lt;T&gt; =&gt; arr.reverse();  // стрелочная функция
+						// Пример с промисом
+						const pr = new Promise&lt;number&gt;((res, rej) =&gt; {
+								setTimeout(() =&gt;  {
+										res(200)
+								}, 2000)
+						});
+						pr.then(data =&gt; data); // на data будет работать автокомплит
 			h2 Интерфейсы
 			h3 Обзор интерфейсов
 			ul
-				li Интерфейс - это определение пользовательского типа данных без реализации
+				li интерфейс - это определение пользовательского типа данных без реализации
+				li если вам нужен пользовательский тип, включающий конструктор, используйте класс; в противном случае используйте интерфейс
+				li интерфейс обеспечивает выполнение определенного контракта
 				li реализовать интерфейсы могут объекты, классы, массивы и функции
-				li
-
+				li интерфейсы наследуются с помощью ключевого слова
+					b &nbsp;extends
+				li реализация классом интерфейса выполняется с помощью ключевого слова
+					b &nbsp;implements
+				li интерфейс массивов описывает их как объекты, к полям которых можно обращаться по индексу
+			h4 реализация интефейса классом и наследование интерфейсов
+			code(v-highlight class="typescript")
+				pre.
+					interface ICharacter{
+							name: string;
+					}
+					interface ICat extends ICharacter {
+							color: string;
+					}
+					interface ICheshir {
+							flight: boolean;
+							setOpacity(level: number) :number;
+					}
+					class MagicRedCat implements ICheshir, ICat {
+							flight = false;
+							name = 'Lewis';
+							color = 'white';
+							setOpacity(level: number) {
+									return level;
+							}
+					}
+			h4 реализация интефейса массивом (данный способ также подходит для объекта, кличи которого заранее не известны, но известен их тип)
+			code(v-highlight class="typescript")
+				pre.
+					interface IArrayInt {
+							[index:number]: number
+					}
+					const i:IArrayInt = [24, 42];
 </template>
 
 <script lang="ts">
-// TS
 import Vue from 'vue';
 import Component from 'vue-class-component';
-// Глобальные компоненты
 import LitestWarpper from '~/components/litest/wrapper.vue';
-// Крафтовые компоненты
-// Вспомогательные библиотеки
-
-@Component({
-	components: {
-		LitestWarpper
-	}
-})
-export default class TSBasics extends Vue {
-
-}
+@Component({ components: { LitestWarpper } })
+export default class TSBasics extends Vue {}
 </script>
 
 <style lang="scss" scoped>

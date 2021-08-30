@@ -1,5 +1,7 @@
 {
 	"compilerOptions": {
+		"jsx": "preserve",
+    "jsxFactory": "VueTsxSupport",
 		"noImplicitAny": false,
 		"noUnusedLocals": true,
 		"noUnusedParameters": true,
@@ -24,10 +26,11 @@
 			"~/*": ["./*"],
 			"@/*": ["./*"]
 		},
-			"types": [
+		"types": [
 			"@nuxt/types",
 			"@types/node",
-			"@nuxtjs/axios"
+			"@nuxtjs/axios",
+			"vue-tsx-support/enable-check"
 			]
 	},
 	"exclude": [

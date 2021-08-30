@@ -10,6 +10,7 @@
 				span но наши
 				span.intro__snowflakes снежинки
 				span до сих пор летают
+
 		.block
 			.block__head
 				h2.block__header теория
@@ -23,6 +24,8 @@
 					NuxtLink.block__link(to="/theory/ts-advanced") TypeScript: advanced.
 				li
 					NuxtLink.block__link(to="/theory/tsx") TSX: like a React in disguise
+				li
+					NuxtLink.block__link(to="/theory/animation-basics") Теория анимации
 
 		.block
 			.block__head
@@ -31,12 +34,12 @@
 					include ../assets/svg/arrow-right.svg
 			.block__quote Должен же когда-то закончиться этот бардак
 			ul.block__link-list
+				//- li
+				//- 	NuxtLink.block__link(to="/code/components") Компоненты для Web (но не web-компоненты!)
 				li
-					NuxtLink.block__link(to="/code/components") Компоненты для Web (но не web-компоненты!)
+					NuxtLink.block__link(to="/code/animation-experience") Анимация: опыт
 				li
-					NuxtLink.block__link(to="/code/algorithm") Реализация базовых алгоритмов
-				li
-					NuxtLink.block__link(to="/code/animation") Анимация
+					NuxtLink.block__link(to="/code/algorithm-tree") Алгноритмы: дерево
 
 		.block
 			.block__head
@@ -54,22 +57,12 @@
 </template>
 
 <script lang="ts">
-// TS
 import Vue from 'vue';
 import Component from 'vue-class-component';
-// Глобальные компоненты
 import LitestWarpper from '~/components/litest/wrapper.vue';
-// Крафтовые компоненты
-// Вспомогательные библиотеки
 
-@Component({
-	components: {
-		LitestWarpper
-	}
-})
-export default class Index extends Vue {
-
-}
+@Component({ components: { LitestWarpper } })
+export default class Index extends Vue {}
 </script>
 
 <style lang="scss" scoped>

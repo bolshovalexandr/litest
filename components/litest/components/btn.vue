@@ -1,25 +1,53 @@
-<template lang="pug">
-	button.button(
-		type="button"
-		@click="onBtnClick"
-	) {{ title }}
-</template>
-
-<script lang="ts">
-import Vue from 'vue';
+<script lang="tsx">
+import * as tsx from 'vue-tsx-support';
 import Component from 'vue-class-component';
 import { Prop } from 'nuxt-property-decorator';
+import { VNode } from 'vue';
 
-@Component({})
-export default class Btn extends Vue {
+interface IProps {
+	color?: string;
+	title?: string;
+}
+
+interface IPrefixedEvents {
+	onClick: MouseEvent;
+	// так трансформируется событие в kebab-case
+	'onSpecial-btn-event': { payload: string; };
+}
+
+interface IScopedSlots {
+	afterContentCounter: null
+}
+
+interface IVueEvents {
+	click: MouseEvent;
+	'special-btn-event': { payload: string; };
+
+}
+
+@Component
+export default class Btn extends tsx.Component<IProps, IPrefixedEvents, IScopedSlots, IVueEvents> {
 	@Prop({ type: String, default: '' })
 	color!: string;
 
 	@Prop({ type: String, default: '' })
 	title!: string;
 
-	onBtnClick(e) {
+	onBtnClick(e: MouseEvent) {
 		this.$emit('click', e);
+		this.$emit('special-btn-event', { payload: 'click payload' });
+	}
+
+	render(): VNode {
+		return (
+			<button
+				class="button"
+				type="button"
+				onClick={(e:MouseEvent) => this.onBtnClick(e)}
+			> { this.title }
+				{ this.$scopedSlots.afterContentCounter && this.$scopedSlots.afterContentCounter(null)}
+			</button>
+		);
 	}
 };
 

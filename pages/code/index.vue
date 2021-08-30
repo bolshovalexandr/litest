@@ -1,32 +1,44 @@
 <template lang="pug">
 	LitestWarpper
-			ul
-				li
-					NuxtLink(to="/code/algorithm") Алгоритмы
-				li
-					NuxtLink(to="/code/animation") Анимация
+		.intro Анимация и алгоритмы
+		Toc(
+			v-for="toc of tocData"
+			:key="toc.header"
+			:header="toc.header"
+			:links="toc.links"
+		)
+
 </template>
 
 <script lang="ts">
-// TS
 import Vue from 'vue';
 import Component from 'vue-class-component';
-// Глобальные компоненты
 import LitestWarpper from '~/components/litest/wrapper.vue';
-// Крафтовые компоненты
-// Вспомогательные библиотеки
+import Toc from '~/components/litest/toc.vue';
 
 @Component({
 	components: {
-		LitestWarpper
+		LitestWarpper,
+		Toc
 	}
 })
 export default class CodeIndex extends Vue {
-
+	tocData = [
+		{
+			header: 'Анимация',
+			links: [
+				{ href: '/code/animation-experience', text: 'Анимация: опыт' }
+			]
+		},
+		{
+			header: 'Алгоритмы',
+			links: [
+				{ href: '/code/algorithm-tree', text: 'Дерево' }
+			]
+		}]
 }
 </script>
 
 <style lang="scss" scoped>
 @import "../../assets/style/globals-litest.scss";
-
 </style>
