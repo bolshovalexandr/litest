@@ -22,8 +22,20 @@
 					template(v-else)
 						span.breadcrumbs__last {{ item.title }}
 
+			//- CONTENT
 			slot
 
+			footer.footer
+				.footer-navigation
+					NuxtLink.footer-navigation__item(to="/theory") теория
+					NuxtLink.footer-navigation__item(to="/code") код
+					NuxtLink.footer-navigation__item(to="/art") арт
+
+		//- footer.global-wrapper__footer
+		//- 	.footer-navigation
+		//- 		NuxtLink.footer-navigation__item(to="/theory") теория
+		//- 		NuxtLink.footer-navigation__item(to="/code") код
+		//- 		NuxtLink.footer-navigation__item(to="/art") арт
 </template>
 
 <script lang="ts">
@@ -164,6 +176,19 @@ a.nav__link.nuxt-link-active {
 			margin-left: 0;
 			border-bottom: none !important;
 		}
+	}
+}
+
+.footer {
+	width: 960px;
+	height: 200px;
+	margin-top: 8rem;
+	border-top: 4px double $Black;
+}
+
+.footer-navigation {
+	&__item {
+		display: block;
 	}
 }
 

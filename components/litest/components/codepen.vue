@@ -26,6 +26,6 @@ export default class Toc extends Vue {
 
 <style lang="scss" scoped>
 .codepen-frame {
-	margin: 2rem 0 4rem;
+	margin: 1rem 0;
 }
 </style>
