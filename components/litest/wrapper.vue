@@ -23,7 +23,8 @@
 						span.breadcrumbs__last {{ item.title }}
 
 			//- CONTENT
-			slot
+			.content
+				slot
 
 			footer.footer
 				.footer-navigation
@@ -31,11 +32,6 @@
 					NuxtLink.footer-navigation__item(to="/code") код
 					NuxtLink.footer-navigation__item(to="/art") арт
 
-		//- footer.global-wrapper__footer
-		//- 	.footer-navigation
-		//- 		NuxtLink.footer-navigation__item(to="/theory") теория
-		//- 		NuxtLink.footer-navigation__item(to="/code") код
-		//- 		NuxtLink.footer-navigation__item(to="/art") арт
 </template>
 
 <script lang="ts">
@@ -100,7 +96,6 @@ export default class Wrapper extends Vue {
 	flex-direction: column;
 	align-items: center;
 	width: 100%;
-	min-height: 100vh;
 	padding-top: 1rem;
 	background-color: $White;
 
@@ -137,13 +132,16 @@ export default class Wrapper extends Vue {
 	}
 }
 
-a.nav__link.nuxt-link-active {
-	border-bottom: 1px solid $Black;
-}
-
 .mask svg {
 	width: 80px;
 	stroke: $Black;
+}
+
+a.nav__link.nuxt-link-active {
+	// border-bottom: 1px solid $Black;
+	&::before {
+		background: linear-gradient(to right, $Black, $Black);
+	}
 }
 
 .nav {
@@ -155,26 +153,33 @@ a.nav__link.nuxt-link-active {
 		@include clear-link();
 		@include font-nav();
 
+		position: relative;
 		margin-left: 2rem;
-		// font-size: 14px;
-		// font-weight: 400;
 		color: $Black;
 		text-transform: uppercase;
-		background-color: linear-gradient(currentColor 0 0);
+		// -start- анимируем подчеркивание и цвет элемента меню
+		background-image: linear-gradient(currentColor 0 0);
+		background-repeat: no-repeat;
 		background-position: 0 100%;
-		background-size: 3px 3px;
+		background-size: 0 1px;
 		transition:
-			opacity 0.3s ease-in,
-			color 0.3s ease-in;
+			background-size 0.35s linear,
+			background-position 0s 0.35s linear;
+		// -end- анимируем подчеркивание и цвет элемента меню
 
 		&:hover {
-			opacity: 0.8;
+			background-position: 100% 100%;
+			background-size: 100% 1px;
 		}
 
 		&--logo {
 			margin-right: auto;
 			margin-left: 0;
-			border-bottom: none !important;
+			background: none !important;
+
+			&:hover {
+				background: none !important;
+			}
 		}
 	}
 }
