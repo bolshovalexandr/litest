@@ -90,6 +90,32 @@
 						click: MouseEvent;
 					}
 					type jsxType = jsxEventMapper&lt;FileTypeEvents&gt;;
+
+			h3 Уточнение типа в зависимости от значения одного из полей объекта
+			code(v-highlight class="typescript")
+				pre.
+					// при установленном в true параметре hasPreviewLink будет требоваться поле avatarPreviewLink
+
+					// также можно унаследовать T и от перечисления (для более сложных проверок, напр., T extends 'minimal' | 'standard' | 'extended')
+					interface IUserBaseOptions&lt;T extends boolean&gt; {
+						hasAvatarLink: T;
+						name: string;
+					}
+
+					// определим подтипы в зависимости от значения типа T (с дополнительным полем и без)
+					interface IUserMinimal extends IUserBaseOptions&lt;false&gt; {}
+					interface IUserFull extends IUserBaseOptions&lt;true&gt; {
+						avatarLink: string;
+					}
+
+					// объединим подтипы
+					type IUser = IUserMinimal | IUserFull;
+
+					// выбросит ошибку - необходимо поле avatarLink
+					const user: IUser = {
+						hasAvatarLink: true,
+						name: 'userion'
+					}
 </template>
 
 <script lang="ts">

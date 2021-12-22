@@ -21,6 +21,15 @@
 			h3 Подчеркивание
 			Codepen(id="XWgMXVy")
 
+			h2 SVG и SMIL-анимация
+			h3 Примеры SVG
+			Codepen(id="xxXOXBX")
+			h3 SMIL-анимация
+
+			h2 ToDo
+			ul
+				li нумерованный список (реф.: Mist.Vacation/Rules)
+
 </template>
 
 <script lang="ts">
