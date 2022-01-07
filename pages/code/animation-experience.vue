@@ -20,15 +20,17 @@
 
 			h3 Подчеркивание
 			Codepen(id="XWgMXVy")
+			h3 Кривая Безье [under construnction]
+			Codepen(id="BaZYzLo")
 
 			h2 SVG и SMIL-анимация
-			h3 Примеры SVG
+			h3 Примеры SVG [under construnction]
 			Codepen(id="xxXOXBX")
 			h3 SMIL-анимация
-
-			h2 ToDo
-			ul
-				li нумерованный список (реф.: Mist.Vacation/Rules)
+			h4 Анимация SVG и прорисовка контура [under construnction]
+			Codepen(id="xxXEVmd")
+			h4 CSS-переменные и раздельное анимирование свойств
+			Codepen(id="WNZJapO")
 
 </template>
 
