@@ -5,7 +5,7 @@
 			nav.nav
 				NuxtLink.nav__link.nav__link--logo(to="/")
 					.mask
-						include ../../assets/svg/mask-lines-white.svg
+						include ../../assets/img/svg/mask-lines-white.svg
 				NuxtLink.nav__link(to="/theory") теория
 				NuxtLink.nav__link(to="/code") код
 				NuxtLink.nav__link(to="/art") арт
@@ -18,7 +18,7 @@
 					template(v-if="!item.isLast")
 						NuxtLink(:to="item.link").breadcrumbs__item {{ item.title }}
 						span.breadcrumbs__divider
-							include ../../assets/svg/arrow-right.svg
+							include ../../assets/img/svg/arrow-right.svg
 					template(v-else)
 						span.breadcrumbs__last {{ item.title }}
 

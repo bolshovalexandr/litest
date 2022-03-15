@@ -15,7 +15,7 @@
 			.block__head
 				h2.block__header теория
 				NuxtLink.block__arrow-link(to="/theory")
-					include ../assets/svg/arrow-right.svg
+					include ../assets/img/svg/arrow-right.svg
 			.block__quote Если всё знать, так это любой дурак сделает
 			ul.block__link-list
 				li
@@ -31,7 +31,7 @@
 			.block__head
 				h2.block__header код
 				NuxtLink.block__arrow-link(to="/code")
-					include ../assets/svg/arrow-right.svg
+					include ../assets/img/svg/arrow-right.svg
 			.block__quote Должен же когда-то закончиться этот бардак
 			ul.block__link-list
 				//- li
@@ -45,14 +45,14 @@
 			.block__head
 				h2.block__header арт
 				NuxtLink.block__arrow-link(to="/art")
-					include ../assets/svg/arrow-right.svg
+					include ../assets/img/svg/arrow-right.svg
 				.block__hidden-icon
 			.block__quote So experience becomes "the opyt"
 			ul.block__link-list
 				li
-					NuxtLink.block__link(to="/external/space") космос
+					NuxtLink.block__link(to="/art/space") космос
 				li
-					NuxtLink.block__link(to="/external/2-the-moon") 2-the-moon
+					NuxtLink.block__link(to="/art/2-the-moon") 2-the-moon
 
 </template>
 

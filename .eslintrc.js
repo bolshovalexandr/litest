@@ -29,6 +29,7 @@ module.exports = {
 		'vue/max-attributes-per-line': 'off',
 		'no-tabs': 'off',
 		'nuxt/no-cjs-in-config': 'off',
+		'no-useless-constructor': 'off',
 		'space-before-function-paren': ['error', 'never'],
 		indent: ['error', 'tab']
 		// "prettier/prettier": ["error", { semi: false }],

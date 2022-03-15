@@ -1,0 +1,38 @@
+<svg viewBox="0 0 1440 1025" fill="none" xmlns="http://www.w3.org/2000/svg">
+<defs>
+	<clipPath id="cut-off-bottom">
+		<rect x="580" y="100" width="450" height="500" />
+	</clipPath>
+</defs>
+<rect width="1440" height="1025" fill="white"/>
+<g clip-path="url(#cut-off-bottom)">
+	<rect x="1000" y="115" width="44" height="120" fill="#DC362B"> <animateTransform attributeName="transform" type="translate" to="-500" dur="4s" repeatCount="indefinite" /> </rect>
+	<rect x="1000" y="115" width="44" height="100" fill="#66AC4D"> <animateTransform attributeName="transform" type="translate" to="-500" begin="0.8s" dur="4s" repeatCount="indefinite" /> </rect>
+	<rect x="1000" y="115" width="44" height="120" fill="#DC362B"> <animateTransform attributeName="transform" type="translate" to="-500" begin="1.6s" dur="4s" repeatCount="indefinite" /> </rect>
+	<rect x="1000" y="115" width="44" height="100" fill="#66AC4D"> <animateTransform attributeName="transform" type="translate" to="-500" begin="2.4s" dur="4s" repeatCount="indefinite" /> </rect>
+	<rect x="1000" y="115" width="44" height="130" fill="#DC362B"> <animateTransform attributeName="transform" type="translate" to="-500" begin="3.2s" dur="4s" repeatCount="indefinite" /> </rect>
+	<rect x="1000" y="115" width="44" height="100" fill="#DC362B"> <animateTransform attributeName="transform" type="translate" to="-500" begin="4s" dur="4s" repeatCount="indefinite" /> </rect>
+	<rect x="1000" y="360" width="44" height="120" fill="#DC362B"> <animateTransform attributeName="transform" type="translate" to="-500" dur="4s" repeatCount="indefinite" /> </rect>
+	<rect x="1000" y="380" width="44" height="100" fill="#66AC4D"> <animateTransform attributeName="transform" type="translate" to="-500" begin="0.8s" dur="4s" repeatCount="indefinite" /> </rect>
+	<rect x="1000" y="360" width="44" height="120" fill="#DC362B"> <animateTransform attributeName="transform" type="translate" to="-500" begin="1.6s" dur="4s" repeatCount="indefinite" /> </rect>
+	<rect x="1000" y="380" width="44" height="100" fill="#66AC4D"> <animateTransform attributeName="transform" type="translate" to="-500" begin="2.4s" dur="4s" repeatCount="indefinite" /> </rect>
+	<rect x="1000" y="350" width="44" height="130" fill="#DC362B"> <animateTransform attributeName="transform" type="translate" to="-500" begin="3.2s" dur="4s" repeatCount="indefinite" /> </rect>
+	<rect x="1000" y="380" width="44" height="100" fill="#DC362B"> <animateTransform attributeName="transform" type="translate" to="-500" begin="4s" dur="4s" repeatCount="indefinite" /> </rect>
+</g>
+<path d="M826.955 277.989C833.442 277.08 848.141 276.706 854.68 276.632L840.314 300.433L766.081 348.867L753.415 322.202C775.225 307.843 820.469 278.898 826.955 277.989Z" fill="#C4C4C4">
+			<animateTransform
+				attributeName="transform"
+				type="translate"
+				values="0 0; 0 10; 0 -10; 0 0;"
+				dur="2s"
+				repeatCount="indefinite"
+			/>
+</path>
+<path d="M1164 204C1113.2 133.6 1118.19 44 1128.19 0H1439.69V298.5C1433.36 303.5 1401 308.5 1367 308.5C1324.5 308.5 1227.5 292 1164 204Z" fill="#FFD53F"/>
+<path d="M160 482.499C113.6 377.293 45.3333 345.047 0 325V837C25.5 836.465 69.5 805.601 111 766.1C152.5 726.598 218 614.008 160 482.499Z" fill="#5684F9"/>
+<path d="M156 325C162.5 322.5 175.6 315.3 176 306.5" stroke="black" stroke-width="2"/>
+<path d="M168 366C174 366.667 187.9 366.4 195.5 360C203.1 353.6 204.333 345.667 204 342.5" stroke="black" stroke-width="2"/>
+<path d="M129.5 429.5C131.333 433.167 146 461 122.5 478.5" stroke="black" stroke-width="2"/>
+<path d="M103.5 417.5C103.833 420.5 102.6 431.5 95 451.5C87.4 471.5 80.8333 477.167 78.5 477.5" stroke="black" stroke-width="2"/>
+<path d="M69.7791 358.05C68.4199 366.567 66.6857 375.108 70.679 383.246C73.1795 388.342 75.8431 394.109 79.3209 398.619C87.644 409.414 98.4506 416.722 110.231 423.074C126.74 431.977 166.692 435.097 170.904 411.333C172.152 404.291 170.848 398.963 168.986 393.12C166.371 384.919 163.468 376.448 159.517 368.818C150.856 352.097 140.977 337.847 124.826 327.672C115.094 321.541 98.5231 318.149 88.3335 324.948C82.289 328.981 77.1004 334.601 73.5971 340.968C69.1317 349.083 69.1069 357.409 69.3269 366.479" stroke="black" stroke-width="2" stroke-linecap="round"/>
+</svg>
